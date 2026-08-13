@@ -8,4 +8,4 @@ Call me unconventional, but I went with team red, rather than team green, for my
 
 ## Philosophy
 
-Although the QM9 exists in the `torchgeometric` library, this project also imports using Kaggle, such that the XYZ geometries are preserved as well as the graph representations. 
+Although the QM9 exists in the `torchgeometric` library, this project uses the data on Kaggle, such that the XYZ geometries are preserved to create custom representations, and apply existing, supplementary molecular descriptors .
