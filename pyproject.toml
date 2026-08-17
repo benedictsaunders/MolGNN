@@ -16,6 +16,7 @@ dependencies = [
     "triton-rocm ; sys_platform == 'linux'",
     "ase>=3.29.0",
     "tqdm>=4.70.0",
+    "mace-torch>=0.3.16",
 ]
 
 [[tool.uv.index]]

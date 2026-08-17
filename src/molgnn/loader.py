@@ -1,7 +1,6 @@
 from pathlib import Path
 from typing import List, Tuple
 import os
-import numpy as np
 import logging
 from glob import glob
 from ase import Atoms
@@ -36,7 +35,7 @@ def parse_kaggle_qm9(filepath: str | Path) -> Tuple[Atoms, Data]:
         G  = str_to_float(props[15]) # Gibbs free
         Cv = str_to_float(props[16]) # Heat capacity
 
-        y_tensor = torch.tensor([[U0, U, H, G]], dtype=torch.float)
+        y_tensor = torch.tensor([[homolumo, U0, U, H, G]], dtype=torch.float)
         Zs = []
         Qs = []
         coordinates = []
@@ -49,7 +48,7 @@ def parse_kaggle_qm9(filepath: str | Path) -> Tuple[Atoms, Data]:
         atoms = Atoms(symbols=Zs, positions=coordinates)
 
     data = Data(
-         z = torch.tensor(Zs, dtype=torch.long),
+         z = torch.tensor(Zs, dtype=torch.long), 
          coords = torch.tensor(coordinates, dtype=torch.float),
          q = torch.tensor(Qs, dtype=torch.float),
          y = y_tensor
