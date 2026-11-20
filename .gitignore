@@ -12,3 +12,6 @@ uv.lock
 
 # Files
 *.json
+# Data and training artefacts
+data/*.pt
+checkpoints/
