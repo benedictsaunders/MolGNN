@@ -4,7 +4,7 @@ This repository hosts my implementation of a GNN predictive model to predict var
 
 ## Installation
 
-Call me unconventional, but I went with team red, rather than team green, for my GPU. As such, the project configuration within the `pyproject.toml` file is geared towards the ROCm stack, instead of CUDA.
+Call me unconventional, but I went with team red, rather than team green, for my GPU. As such, the project configuration within the `pyproject.toml` file is geared towards the ROCm stack, instead of CUDA. It uses the PyTorch ROCm 7.2 wheels (torch 2.14), the first line whose builds include RDNA4 (gfx1200/gfx1201) kernels alongside older AMD architectures.
 
 ## Usage
 

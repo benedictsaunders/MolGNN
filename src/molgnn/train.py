@@ -3,7 +3,6 @@
 import argparse
 import logging
 import math
-import warnings
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Optional, Sequence
@@ -236,8 +235,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO)
-    # Harmless noise from e3nn's TorchScript-compiled modules.
-    warnings.filterwarnings("ignore", message="The TorchScript type system")
 
     if args.config is not None:
         Configuration.set_filepath(args.config)
