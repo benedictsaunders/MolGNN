@@ -1,10 +1,12 @@
 # MolGNN
 
-This repository hosts my implementation of a GNN predictive model to predict various chemical properties of small organic molecules, trained on the QM9 dataset.
+This repository hosts my implementation of a GNN predictive model to predict various chemical properties of small organic molecules, using data from the QM9 dataset.
 
 ## Installation
 
 Call me unconventional, but I went with team red, rather than team green, for my GPU. As such, the project configuration within the `pyproject.toml` file is geared towards the ROCm stack, instead of CUDA. It uses the PyTorch ROCm 7.2 wheels (torch 2.14), the first line whose builds include RDNA4 (gfx1200/gfx1201) kernels alongside older AMD architectures.
+
+⚠️ **At this point (November 2026), it is mostly created in a few-shot approach with Claude Code, as an experiment. As such, it has not been tested as a formal research tool.** Building the configuration for PyTorch was a lot more fiddly, so that was done by hand.
 
 ## Usage
 
@@ -27,4 +29,4 @@ product basis (`A + A⊗A`), residual updates and per-layer invariant readouts. 
 
 ## Philosophy
 
-Although the QM9 exists in the `torchgeometric` library, this project uses the data on Kaggle, such that the XYZ geometries are preserved to create custom representations, and apply existing, supplementary molecular descriptors .
+Although QM9 exists in the `torchgeometric` library, this project uses the data on Kaggle, such that the XYZ geometries are preserved to create custom representations and apply existing, supplementary molecular descriptors.
